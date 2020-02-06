@@ -30,4 +30,3 @@ $customerlist = [
     echo "<td><image src ='".$values['anh']."' width = '60px' height ='60px'/></td>";
     echo "</tr>";
   }
-?> 

@@ -20,4 +20,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Không tìm thấy từ cần tra.";
     }
 }
-?>
