@@ -77,7 +77,7 @@
 
         public function toString()
         {
-            if ($this->on == true) {
+            if ($this->on) {
                 return "<br>Tốc độ: " . $this->speed . "<br>Màu:" . $this->color . "<br>Bán kính :" . $this->radius ."<br>Trạng thái: on";
             } else {
                 return "<br>Màu:" . $this->color . "<br>Bán kính :" . $this->radius ."<br>Trạng thái: off";
