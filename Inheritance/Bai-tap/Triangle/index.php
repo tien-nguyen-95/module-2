@@ -25,7 +25,8 @@
         }
         catch(Exception $e){
             $error = $e->getMessage();
-        }
-        
+        }   
     }
+
+    include 'index.view.php';
 ?>

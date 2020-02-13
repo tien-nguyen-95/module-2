@@ -6,7 +6,6 @@
     <title>Point2D & Point3D</title>
 </head>
 <body>
-    <?php include "index.php"; ?>
     Point2D : <?= $showPoint2D ?><hr>
     Point3D : <?= $showPoint3D ?>
 </body>

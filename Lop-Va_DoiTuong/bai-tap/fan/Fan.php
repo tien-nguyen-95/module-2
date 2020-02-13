@@ -1,7 +1,7 @@
 <?php
     class Fan
     {
-        const  SLOW = 1;
+        const SLOW = 1;
         const MEDIUM = 2;
         const FAST = 3;
         private int $speed;

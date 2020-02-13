@@ -13,4 +13,5 @@
         $show .= $value->toString()."<br>After"
         .$value->resize()->toString()."<hr>";
     }
+    include_once 'index.view.php';
 ?>

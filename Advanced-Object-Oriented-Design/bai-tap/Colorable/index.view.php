@@ -6,9 +6,6 @@
     <title>Colorable</title>
 </head>
 <body>
-    <?php
-    include_once 'index.php';
-    echo $show ;
-    ?>
+    <?=$show?>
 </body>
 </html>

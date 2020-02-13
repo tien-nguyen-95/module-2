@@ -11,7 +11,7 @@
                 throw new Exception("Hãy nhập đầy đủ");
             }
 
-            if($a==0){
+            if($a=='0'){
                 throw new Exception("Nhập a khác 0");
             }
             
@@ -36,4 +36,5 @@
             $error = $e->getMessage();
         }
     }
+    include "index.view.php";
 ?>

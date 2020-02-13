@@ -6,7 +6,6 @@
     <title>Lớp Circle và lớp Cylinder</title>
 </head>
 <body>
-    <?php include 'index.php'?>
     <?= $showCircle."<hr>".$showCylinder ?>
 </body>
 </html>

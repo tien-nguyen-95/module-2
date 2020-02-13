@@ -6,8 +6,6 @@
     <title>Stop Watch</title>
 </head>
 <body>
-    <?php include 'index.php'?>
-
     Tổng từ 1 đến 100 : <?= $sum ?><br>
     Thời gian bắt đầu : <?= $timeStart?><br>
     Thời gian kết thúc : <?= $timeStop?><br>

@@ -6,7 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-<?php include 'index.php' ?>
     Quạt 1:
     <?=$showFan1?><hr>
     Quạt 2:

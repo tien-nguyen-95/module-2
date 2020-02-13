@@ -6,4 +6,5 @@
 
     $cylinder = new Cylinder();
     $showCylinder = $cylinder->setColor('blue')->setRadius(4)->setHeight(4)->toString();
+    include 'index.view.php';
 ?>

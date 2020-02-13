@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php include 'index.php'?>
     <form method="POST">
         Nhập cạnh 1:<br>
         <input type="text" name="side1" placeholder="nhập số.."><br>

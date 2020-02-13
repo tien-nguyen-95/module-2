@@ -12,3 +12,4 @@
     $timeStart = date('Y/m/d H:i:s', $time->getStart());
    
     $timeStop = date('Y/m/d H:i:s', $time->getEnd());
+    include 'index.view.php';
