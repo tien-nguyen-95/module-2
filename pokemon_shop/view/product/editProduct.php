@@ -27,6 +27,6 @@
         </div>
     <div class="form-group">
         <input type="submit" value="Confirm" class="btn btn-primary"/>
-        <a href="index.php" class="btn btn-default">Cancel</a>
+        <a href="product.php" class="btn btn-default">Cancel</a>
     </div>
 </form>

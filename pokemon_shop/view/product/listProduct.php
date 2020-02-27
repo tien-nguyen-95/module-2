@@ -28,8 +28,6 @@
       <td> <a href="./product.php?page=editProduct&id=<?php echo $product->productCode; ?>" title="Edit"><i class='fa fa-edit' style='font-size:25px; color:bluesky; margin:5px;'></i></a></td>
       <td> <a href="./product.php?page=deleteProduct&id=<?php echo $product->productCode; ?>" title="Delete"><i class='fa fa-trash' style='font-size:25px; color:red; margin:5px;'></i></i></a></td>
     </tr>
-   
   <?php endforeach; ?>
   </tbody>
 </table>
-<script src="/public/js/search.js"></script>

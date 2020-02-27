@@ -3,9 +3,9 @@
    require "/module2/pokemon_shop/model/ShiperDB.php";
    require "/module2/pokemon_shop/model/Shiper.php";
    require "/module2/pokemon_shop/model/DBConnection.php";
-
+   require "/module2/pokemon_shop/view/partials/head.php";
   use \Controller\ShiperController;
-  require "/module2/pokemon_shop/view/partials/head.php";
+  
   $controlShiper = new ShiperController();
   
   $page = isset($_REQUEST['page'])? $_REQUEST['page'] : NULL;

@@ -15,19 +15,17 @@
   </tr>
   </thead>
   <tbody id="myTable">
-  <?php foreach ($shipers as $key => $shiper): ?>
-  <tr>
-      <td><?php echo ++$key ?></td>
-      <td><?php echo $shiper->name ?></td>
-      <td><?php echo $shiper->birthday ?></td>
-      <td><?php echo $shiper->phone ?>
-      <td><?php echo $shiper->email ?></td>
-      <td><?php echo $shiper->timework ?></td>
-      <td> <a href="./shiper.php?page=editShiper&id=<?php echo $shiper->id_shiper; ?>" title="Edit"><i class='fa fa-edit' style='font-size:25px; color:bluesky; margin:5px;'></i></a></td>
-      <td> <a href="./shiper.php?page=deleteShiper&id=<?php echo $shiper->id_shiper; ?>" title="Delete"><i class='fa fa-trash' style='font-size:25px; color:red; margin:5px;'></i></a></td>
-  </tr>
-   
-  <?php endforeach; ?>
+    <?php foreach ($shipers as $key => $shiper): ?>
+        <tr>
+            <td><?php echo ++$key ?></td>
+            <td><?php echo $shiper->name ?></td>
+            <td><?php echo $shiper->birthday ?></td>
+            <td><?php echo $shiper->phone ?>
+            <td><?php echo $shiper->email ?></td>
+            <td><?php echo $shiper->timework ?></td>
+            <td> <a href="./shiper.php?page=editShiper&id=<?php echo $shiper->id_shiper; ?>" title="Edit"><i class='fa fa-edit' style='font-size:25px; color:bluesky; margin:5px;'></i></a></td>
+            <td> <a href="./shiper.php?page=deleteShiper&id=<?php echo $shiper->id_shiper; ?>" title="Delete"><i class='fa fa-trash' style='font-size:25px; color:red; margin:5px;'></i></a></td>
+        </tr>
+    <?php endforeach; ?>
   </tbody>
 </table>
-<script src="/public/js/search.js"></script>
