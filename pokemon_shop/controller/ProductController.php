@@ -18,7 +18,7 @@ class ProductController
     public function add()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            include 'view/addProduct.php';
+            include 'addProduct.php';
         } else {
   
             $productName = $_POST['productName'];
@@ -31,7 +31,7 @@ class ProductController
             $product = new Product($productName,$width,$height,$material,$description,$price);
             $this->productDB->create($product);
             $message = 'Successful';
-            include 'view/addProduct.php';
+            include 'addProduct.php';
         }
     }
 
@@ -40,12 +40,12 @@ class ProductController
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = $_GET['id'];
             $product = $this->productDB->get($id);
-            include 'view/editProduct.php';
+            include 'editProduct.php';
         } else {
             $id = $_POST['id'];
             $product = new Product($_POST['productName'], $_POST['width'], $_POST['height'],$_POST['material'], $_POST['description'], $_POST['price']);
             $this->productDB->update($id, $product);
-            header('Location: index.php');
+            header('Location: product.php');
         }
     }
 
@@ -54,17 +54,17 @@ class ProductController
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = $_GET['id'];
             $product = $this->productDB->get($id);
-            include 'view/deleteProduct.php';
+            include 'deleteProduct.php';
         } else {
             $id = $_POST['id'];
             $this->productDB->delete($id);
-            header('Location: index.php');
+            header('Location: product.php');
         }
     }
 
     public function index(){
         $products = $this->productDB->getAll();
-        include 'view/listProduct.php';
+        include 'listProduct.php';
       }
 }
 ?>
