@@ -1,3 +1,4 @@
+
 <h2>Update</h2>
 <form method="post" action="./product.php?page=editProduct">
     <input type="hidden" name="id" value="<?php echo $product->productCode; ?>"/>
@@ -18,8 +19,9 @@
             <input type="text" class="form-control" name="material" value="<?php echo $product->material; ?>" required>
         </div>
         <div class="form-group">
-            <label>Description</label>
-            <input type="text" class="form-control" name="description" value="<?php echo $product->description; ?>" >
+            <label>Image</label>
+            <input type="file" name="image" id="image">
+            <img src="<?= 'data:image;base64,' . base64_encode($product->image) ?> " width="60px" height="60px">
         </div>
         <div class="form-group">
             <label>Price</label>

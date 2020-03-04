@@ -7,16 +7,16 @@
         public $width;
         public $height;
         public $material;
-        public $description;
+        public $image;
         public $price;
 
-        public function __construct($productName,$width,$height,$material,$description,$price)
+        public function __construct($productName,$width,$height,$material,$image,$price)
         {
             $this->productName = $productName;
             $this->width = $width;
             $this->height = $height;
             $this->material = $material;
-            $this->description = $description;
+            $this->image = $image;
             $this->price = $price;
         }
     }

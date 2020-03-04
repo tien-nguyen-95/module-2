@@ -1,5 +1,5 @@
 .logo{
-    position: absolute;
+    position: fixed;
     width: 250px;
     height: 100px;
     left: 0;
@@ -7,10 +7,14 @@
     margin: 10px;
 }
 .img-ball{
-    position: absolute;
+    position: fixed;
     top: 150px;
     left: 50px;
     border-radius: 50%;
     width: 180px;
     height: 180px;
 }
+.logo:hover{
+    transform: scale(1.2);
+  }
+  

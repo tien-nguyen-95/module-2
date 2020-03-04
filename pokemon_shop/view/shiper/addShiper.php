@@ -1,8 +1,3 @@
-<?php
-if(isset($message)){
-  echo "<p class='alert-info'>$message</p>";
-}
-?>
 
 <div class="col-12 col-md-12">
     <div class="row">

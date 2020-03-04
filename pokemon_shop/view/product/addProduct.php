@@ -1,8 +1,3 @@
-<?php
-if(isset($message)){
-  echo "<p class='alert-info'>$message</p>";
-}
-?>
 
 <div class="col-12 col-md-12">
     <div class="row">
@@ -10,7 +5,7 @@ if(isset($message)){
             <h1>Add new product</h1>
         </div>
         <div class="col-12">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label>Name</label>
                     <input type="text" class="form-control" name="productName" required>
@@ -28,8 +23,8 @@ if(isset($message)){
                     <input type="text" class="form-control" name="material" required>
                 </div>
                 <div class="form-group">
-                    <label>Description</label>
-                    <input type="text" class="form-control" name="description" required>
+                    <label>Image</label>
+                    <input type="file" class="form-control" name="image" required>
                 </div>
                 <div class="form-group">
                     <label>Price</label>

@@ -1,3 +1,4 @@
+
 <h1>Are you sure to delete <?php echo $product->productName; ?> ?</h1>
 <form action="./product.php?page=deleteProduct" method="post">
   <input type="hidden" name="id" value="<?php echo $product->productCode; ?>"/>

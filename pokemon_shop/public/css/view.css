@@ -1,18 +1,30 @@
 body{
-  background-image:url('/public/images/pikachu.jpg');
+  /* background-image: url("/public/images/snow.jpg");
   background-repeat: no-repeat;
-  background-size: 100% ;
+  background-size: 100% 100%; */
+  background-color: burlywood;
 }
+
 #myTable{
   font-weight: bold;
+  color:black;
+  font-size: medium;
 }
 .logo{
-  position: absolute;
+  position: fixed;
   width: 250px;
   height: 100px;
   left: 0;
   top:0;
   margin: 10px;
+}
+
+.logo:hover{
+  transform: scale(1.2);
+}
+
+.zoom:hover{
+  transform: scale(2);
 }
 
 *, *:before, *:after {
@@ -28,9 +40,9 @@ body{
   }
   /* Poké Styles */
   .pokeball {
-    top: 100px;
+    top: 120px;
     left: 50px;
-    position: absolute;
+    position: fixed;
     width: 180px;
     height: 180px;
     background: #fff;

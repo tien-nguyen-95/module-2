@@ -1,3 +1,4 @@
+
 <h2>Shiper List</h2>
 <a href="./shiper.php?page=addShiper" class="btn btn-success">Add</a>
 <input style=" width:1000px;float:right;" class="form-control mb-4" id="tableSearch" type="text"
@@ -5,7 +6,7 @@
 <table class="table">
   <thead class="thead-dark">
   <tr>
-      <th>STT</th>
+      <th>Serial</th>
       <th>Name</th>
       <th>Birthday</th>
       <th>Phone</th>

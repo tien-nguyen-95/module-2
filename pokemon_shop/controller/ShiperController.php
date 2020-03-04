@@ -28,8 +28,7 @@ class ShiperController
   
             $shiper = new Shiper($name,$birthday,$phone,$email,$timework);
             $this->shiperDB->create($shiper);
-            $message = 'Successful';
-            include 'addShiper.php';
+            header('Location: shiper.php');
         }
     }
 

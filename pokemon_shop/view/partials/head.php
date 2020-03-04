@@ -13,10 +13,14 @@
 </head>
 <body>
 <header class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="http://localhost:3000/view/product/product.php">Product management</a>
-    <a class="navbar-brand" href="http://localhost:3000/view/shiper/shiper.php">Shiper management</a>
-    <a class="navbar-brand" href="http://localhost:3000/index.php">Log Out</a>
+    <a class="navbar-brand" href="/view/product/product.php">Product management</a>
+    <a class="navbar-brand" href="/view/shiper/shiper.php">Shiper management</a>
+    <a class="navbar-brand" href="/view/customer/customer.php">Customer management</a>
+    <a class="navbar-brand" href="/view/order/order.php">Order management</a>
+    <a class="navbar-brand" href="/view/delivery/listDelivery.php">Delivery </a>
+    <a class="navbar-brand" href="/view/payment/listPayment.php">Payment </a>
+    <a class="navbar-brand" href="../../login/logout.php">Log Out</a>
   </header>
-  <img class="logo" src="/public/images/titlepkm.png" alt="Pokemon">
-  <img class="img-ball" src="/public/images/pkb.jpg" >
+  <a href="#"><img class="logo" src="/public/images/logo.png" alt="Pokemon"></a>
+  <a href="#"><img class="img-ball" src="/public/images/pkb.jpg" ></a>
 <div class="container">

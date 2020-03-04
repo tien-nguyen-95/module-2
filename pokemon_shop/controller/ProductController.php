@@ -1,6 +1,6 @@
 <?php
 namespace Controller;
-
+use function Couchbase\defaultDecoder;
 use Model\Product;
 use Model\ProductDB;
 use Model\DBConnection;
@@ -20,18 +20,17 @@ class ProductController
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             include 'addProduct.php';
         } else {
-  
+            
+            
             $productName = $_POST['productName'];
             $width = $_POST['width'];
             $height = $_POST['height'];
             $material = $_POST['material'];
-            $description = $_POST['description'];
+            $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
             $price = $_POST['price'];
-  
-            $product = new Product($productName,$width,$height,$material,$description,$price);
+            $product = new Product($productName,$width,$height,$material,$image,$price);
             $this->productDB->create($product);
-            $message = 'Successful';
-            include 'addProduct.php';
+            header('Location: product.php');
         }
     }
 
@@ -43,7 +42,7 @@ class ProductController
             include 'editProduct.php';
         } else {
             $id = $_POST['id'];
-            $product = new Product($_POST['productName'], $_POST['width'], $_POST['height'],$_POST['material'], $_POST['description'], $_POST['price']);
+            $product = new Product($_POST['productName'], $_POST['width'], $_POST['height'],$_POST['material'], addslashes(file_get_contents($_FILES['image']['tmp_name'])), $_POST['price']);
             $this->productDB->update($id, $product);
             header('Location: product.php');
         }
