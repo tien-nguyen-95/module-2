@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//[Thực hành] Sử dụng route cơ bản
+
 // Route::get('/', function () {
 //     echo "<h2>This is Home page</h2>";
 // });
