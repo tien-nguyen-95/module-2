@@ -83,6 +83,10 @@ Route::post('/dictionary', function (Illuminate\Http\Request $request) {
         'hello'=>'Xin chào',
         'hi'=>'Chao xìn'
     ];
-    $result = $dictionary[$request->input];
+    $key = $request->input;
+    if(!array_key_exists($key,$dictionary)){
+        return 'Không có dữ liệu';
+    }
+    $result = $dictionary[$key];
     return view('output_word',compact(['result']));
 });
