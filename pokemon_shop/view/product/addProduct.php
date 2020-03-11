@@ -24,11 +24,16 @@
                 </div>
                 <div class="form-group">
                     <label>Image</label>
-                    <input type="file" class="form-control" name="image" required>
+                    <input type="file" name="image" id="image" onchange="readURL(this)" >
+                    <img id="showimage" src="<?= $product->image ?? NULL ?>" width="60px" height="60px">
                 </div>
                 <div class="form-group">
                     <label>Price</label>
                     <input type="text" class="form-control" name="price" required>
+                </div>
+                <div class="form-group">
+                    <label>Origin</label>
+                    <input type="text" class="form-control" name="origin" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Add</button>
                 <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Cancel</button>

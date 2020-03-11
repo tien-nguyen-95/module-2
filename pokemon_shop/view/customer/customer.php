@@ -8,7 +8,6 @@
   use \Controller\CustomerController;
 
 
-
   $controlCustomer = new CustomerController();
 
   $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : NULL;

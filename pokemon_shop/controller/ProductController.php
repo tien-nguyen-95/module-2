@@ -2,6 +2,7 @@
 namespace Controller;
 use function Couchbase\defaultDecoder;
 use Model\Product;
+use Model\Image;
 use Model\ProductDB;
 use Model\DBConnection;
 
@@ -26,9 +27,10 @@ class ProductController
             $width = $_POST['width'];
             $height = $_POST['height'];
             $material = $_POST['material'];
-            $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+            $image = Image::uploadImg($_FILES['image']);
             $price = $_POST['price'];
-            $product = new Product($productName,$width,$height,$material,$image,$price);
+            $origin = $_POST['origin'];
+            $product = new Product($productName , $width , $height , $material , $image , $price , $origin);
             $this->productDB->create($product);
             header('Location: product.php');
         }
@@ -42,7 +44,7 @@ class ProductController
             include 'editProduct.php';
         } else {
             $id = $_POST['id'];
-            $product = new Product($_POST['productName'], $_POST['width'], $_POST['height'],$_POST['material'], addslashes(file_get_contents($_FILES['image']['tmp_name'])), $_POST['price']);
+            $product = new Product($_POST['productName'], $_POST['width'], $_POST['height'],$_POST['material'], Image::uploadImg($_FILES['image']), $_POST['price'] ,$_POST['origin']);
             $this->productDB->update($id, $product);
             header('Location: product.php');
         }

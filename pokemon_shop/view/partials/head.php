@@ -7,7 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Management</title>
   <link rel="icon" href="/public/images/icon_pokeball.png">
-  <link rel="stylesheet" href="/public/css/manager.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
@@ -18,9 +17,7 @@
     <a class="navbar-brand" href="/view/customer/customer.php">Customer management</a>
     <a class="navbar-brand" href="/view/order/order.php">Order management</a>
     <a class="navbar-brand" href="/view/delivery/listDelivery.php">Delivery </a>
-    <a class="navbar-brand" href="/view/payment/listPayment.php">Payment </a>
+    <a class="navbar-brand" href="/view/payment/payment.php">Payment </a>
     <a class="navbar-brand" href="../../login/logout.php">Log Out</a>
   </header>
-  <a href="#"><img class="logo" src="/public/images/logo.png" alt="Pokemon"></a>
-  <a href="#"><img class="img-ball" src="/public/images/pkb.jpg" ></a>
 <div class="container">

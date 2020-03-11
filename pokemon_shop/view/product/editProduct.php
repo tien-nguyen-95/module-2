@@ -1,6 +1,6 @@
 
 <h2>Update</h2>
-<form method="post" action="./product.php?page=editProduct">
+<form method="post" action="./product.php?page=editProduct" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?php echo $product->productCode; ?>"/>
     <div class="form-group">
             <label>Name</label>
@@ -20,12 +20,16 @@
         </div>
         <div class="form-group">
             <label>Image</label>
-            <input type="file" name="image" id="image">
-            <img src="<?= 'data:image;base64,' . base64_encode($product->image) ?> " width="60px" height="60px">
+            <input type="file" name="image" id="image"  onchange="readURL(this)">
+            <img id="showimage" src="<?= $product->image ?>" width="60px" height="60px">
         </div>
         <div class="form-group">
             <label>Price</label>
             <input type="text" class="form-control" name="price" value="<?php echo $product->price; ?>" required>
+        </div>
+        <div class="form-group">
+            <label>Origin</label>
+            <input type="text" class="form-control" name="origin" value="<?php echo $product->origin; ?>" required>
         </div>
     <div class="form-group">
         <input type="submit" value="Confirm" class="btn btn-primary"/>

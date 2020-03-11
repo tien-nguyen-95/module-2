@@ -1,11 +1,12 @@
 <?php
 
   require "../../login/access.php";
-  require "/module2/pokemon_shop/controller/ProductController.php";
-  require "/module2/pokemon_shop/model/ProductDB.php";
-  require "/module2/pokemon_shop/model/Product.php";
-  require "/module2/pokemon_shop/model/DBConnection.php";
-  require "/module2/pokemon_shop/view/partials/head.php";
+  require_once "../../model/Image.php";
+  require "../../controller/ProductController.php";
+  require "../../model/ProductDB.php";
+  require "../../model/Product.php";
+  require "../../model/DBConnection.php";
+  require "../../view/partials/head.php";
   use \Controller\ProductController;
 
   $controlProduct = new ProductController();
@@ -28,5 +29,5 @@
       $controlProduct->index();
       break;
   }
-  require "/module2/pokemon_shop/view/partials/foot.php";
+  require "../../view/partials/foot.php";
 ?>

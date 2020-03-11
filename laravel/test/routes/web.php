@@ -64,12 +64,12 @@ Route::get('/inputproduct', function () {
 });
 
 Route::post('/calculator', function (Illuminate\Http\Request $request) {
-    $productDescription = $request->productDescription;
+    $description = $request->description;
     $price = $request->price;
     $discountPercent = $request->discountPercent;
     $discountAmount = $price * $discountPercent * 0.01;
     $discountPrice = $price - $discountAmount;
-    return view('show_discount', compact(['discountPrice', 'discountAmount', 'productDescription', 'price', 'discountPercent']));
+    return view('show_discount', compact(['discountPrice', 'discountAmount', 'description', 'price', 'discountPercent']));
 });
 
 //[Bài tập] Ứng dụng Từ điển đơn giản
@@ -81,9 +81,13 @@ Route::get('/dictionary', function () {
 Route::post('/dictionary', function (Illuminate\Http\Request $request) {
     $dictionary =[
         'hello'=>'Xin chào',
-        'hi'=>'Chao xìn'
+        'hi'=>'Chao xìn',
+        'bye' => 'Tạm biệt',
+        'die' => 'Chết',
+        'skill'=> 'Kĩ năng'
     ];
     $key = $request->input;
+
     if(!array_key_exists($key,$dictionary)){
         return 'Không có dữ liệu';
     }

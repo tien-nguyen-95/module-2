@@ -13,6 +13,7 @@
       <th>Material</th>
       <th>Image</th>
       <th>Price</th>
+      <th>Origin</th>
       <th colspan="2">Action</th>
   </tr>
   </thead>
@@ -24,8 +25,9 @@
       <td><?php echo $product->width ?></td>
       <td><?php echo $product->height ?>
       <td><?php echo $product->material ?></td>
-      <td><img   src="<?= 'data:image;base64,' . base64_encode($product->image) ?> " width="60px"height="60px"></td>
-      <td><?php echo "$".$product->price ?></td>
+      <td><img   src="<?= ($product->image) ?> " width="60px"height="60px"></td>
+      <td><?php echo $product->price." VND" ?></td>
+      <td><?php echo $product->origin ?></td>
       <td> <a href="./product.php?page=editProduct&id=<?php echo $product->productCode; ?>" title="Edit"><i class='fa fa-edit' style='font-size:25px; color:bluesky; margin:5px;'></i></a></td>
       <td> <a href="./product.php?page=deleteProduct&id=<?php echo $product->productCode; ?>" title="Delete"><i class='fa fa-trash' style='font-size:25px; color:red; margin:5px;'></i></i></a></td>
     </tr>

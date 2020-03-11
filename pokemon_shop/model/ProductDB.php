@@ -12,8 +12,8 @@
 
         public function create($product)
         {   
-            $sql = "INSERT INTO `products`(`productName`, `width`, `height`, `material`, `image`, `price`) 
-            VALUES (?,?,?,?,?,?)";
+            $sql = "INSERT INTO `products`(`productName`, `width`, `height`, `material`, `image`, `price`, `origin`) 
+            VALUES (?,?,?,?,?,?,?)";
             $statement = $this->connection->prepare($sql);
             $statement->bindParam(1, $product->productName);
             $statement->bindParam(2, $product->width);
@@ -21,6 +21,7 @@
             $statement->bindParam(4, $product->material);
             $statement->bindParam(5, $product->image);
             $statement->bindParam(6, $product->price);
+            $statement->bindParam(6, $product->origin);
             return $statement->execute();
         }
 
@@ -32,7 +33,7 @@
             $result = $statement->fetchAll();
             $products = [];
             foreach ($result as $row) {
-                $product = new Product($row['productName'], $row['width'], $row['height'],$row['material'], $row['image'], $row['price']);
+                $product = new Product($row['productName'], $row['width'], $row['height'],$row['material'], $row['image'], $row['price'] ,$row['origin']);
                 $product->productCode = $row['productCode'];
                 $products[] = $product;
             }
@@ -45,14 +46,15 @@
             $statement->bindParam(1, $id);
             $statement->execute();
             $row = $statement->fetch();
-            $product = new Product($row['productName'], $row['width'], $row['height'],$row['material'], $row['image'], $row['price']);
+            $product = new Product($row['productName'], $row['width'], $row['height'],$row['material'], $row['image'], $row['price'] ,$row['origin']);
             $product->productCode = $row['productCode'];
             return $product;
         }
         
         public function update($id, $product){
             
-            $sql = "UPDATE products SET productName = ?, width = ?, height = ?, material = ?, image = ?, price = ? WHERE productCode = ?";
+            
+            $sql = "UPDATE products SET productName = ?, width = ?, height = ?, material = ?, image = ?, price = ?, origin = ?WHERE productCode = ?";
             $statement = $this->connection->prepare($sql);
             $statement->bindParam(1, $product->productName);
             $statement->bindParam(2, $product->width);
@@ -60,7 +62,8 @@
             $statement->bindParam(4, $product->material);
             $statement->bindParam(5, $product->image);
             $statement->bindParam(6, $product->price);
-            $statement->bindParam(7, $id);
+            $statement->bindParam(7, $product->origin);
+            $statement->bindParam(8, $id);
             return $statement->execute();
         }
 

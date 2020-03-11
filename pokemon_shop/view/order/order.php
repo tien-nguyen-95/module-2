@@ -1,10 +1,10 @@
 <?php
   require "../../login/access.php";
-  require "/module2/pokemon_shop/controller/OrderController.php";
-  require "/module2/pokemon_shop/model/OrderDB.php";
-  require "/module2/pokemon_shop/model/Order.php";
-  require "/module2/pokemon_shop/model/DBConnection.php";
-  require "/module2/pokemon_shop/view/partials/head.php";
+  require "../../controller/OrderController.php";
+  require "../../model/OrderDB.php";
+  require "../../model/Order.php";
+  require "../../model/DBConnection.php";
+  require "../../view/partials/head.php";
   use \Controller\OrderController;
 
 
@@ -23,11 +23,11 @@
 
     case 'editOrder':
       $controlOrder->edit();
-      break;
+      break;  
 
     default:
       $controlOrder->index();
       break;
   }
-  require "/module2/pokemon_shop/view/partials/foot.php";
+  require "../../view/partials/foot.php";
 ?>

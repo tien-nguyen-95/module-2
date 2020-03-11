@@ -6,8 +6,8 @@
     <title>Discount</title>
 </head>
 <body>
-    Product Description: {{$productDescription}}<br>
-    Price: {{$price}}<br>
+    Product Description: {{$description}}<br>
+    Price: ${{$price}}<br>
     Discount Percent: {{$discountPercent}} %<br>
     Discount Amount: ${{$discountAmount}}<br>
     Discount Price: ${{$discountPrice}}<br>
