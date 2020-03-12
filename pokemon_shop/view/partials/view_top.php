@@ -58,5 +58,6 @@
     <a class="navbar-brand" href="./view.product.php"><strong>Sản Phẩm</strong></a>
     <a class="navbar-brand" href="#"><strong>Tin Tức</strong></a>
     <a class="navbar-brand" href="./contact.php"><strong>Liên Hệ</strong></a>
+    <a class="navbar-brand" href="../../login/login.php"><strong>Đăng nhập</strong></a>
   </div>
   <hr>

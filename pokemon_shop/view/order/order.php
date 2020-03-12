@@ -6,9 +6,9 @@
   require "../../model/DBConnection.php";
   require "../../view/partials/head.php";
   use \Controller\OrderController;
-
+  
   $controlOrder = new OrderController();
-
+ 
   $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : NULL;
   switch ($page) {
     case 'addOrder':

@@ -1,7 +1,6 @@
 
 <h2>Payment</h2>
-<a href="#" class="btn btn-success" style="float:left;">Add</a>
-<input style=" width:1000px;float:right;" class="form-control mb-4" id="tableSearch" type="text"
+<input  class="form-control mb-4" id="tableSearch" type="text"
     placeholder="Search..">
 <table class="table">
   <thead class="thead-dark">
@@ -18,7 +17,7 @@
       <td><?php echo ++$key ?></td>
       <td><?php echo $payment->customer ?></td>
       <td><?php echo $payment->date ?></td>
-      <td><?php echo $payment->payment ?>
+      <td><?php echo $payment->payment ?> VND</td>
     </tr>
   <?php endforeach; ?>
   </tbody>

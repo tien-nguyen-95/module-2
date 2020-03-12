@@ -1,14 +1,35 @@
-
+<?php 
+    require "../../model/ProductDB.php";
+    require "../../model/Product.php";
+    require "../../model/CustomerDB.php";
+    require "../../model/Customer.php";
+    use Model\ProductDB;
+    use Model\CustomerDB;
+    use Model\DBConnection;
+    $connection = new DBConnection("mysql:host=localhost;dbname=casestudyDB", "root", "");
+    $productDB = new ProductDB($connection->connect());
+    $products = $productDB->getAll();
+    $customerDB = new CustomerDB($connection->connect());
+    $customers = $customerDB->getAll();
+?>
 <h2>Update</h2>
 <form method="post" action="./order.php?page=editOrder">
     <input type="hidden" name="id" value="<?php echo $order->orderNumber; ?>"/>
-    <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" name="id_customer" value="<?php echo $order->id_customer; ?>"required>
+        <div class="form-group">
+            <label>Customer</label>
+            <select name="id_customer" >
+                <?php foreach ($customers as $key => $customer): ?>
+                    <option value="<?= $customer->id_customer; ?>" <?= $customer->id_customer==$order->id_customer? 'selected': NULL;?> ><?= $customer->name; ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
         <div class="form-group">
             <label>Product</label>
-            <input type="text" class="form-control" name="productCode" value="<?php echo $order->productCode; ?>"required>
+            <select name="productCode" >
+                <?php foreach ($products as $key => $product): ?>
+                    <option value="<?= $product->productCode; ?>" <?= $product->productCode==$order->productCode? 'selected': NULL;?> ><?= $product->productName; ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
         <div class="form-group">
             <label>Date</label>
