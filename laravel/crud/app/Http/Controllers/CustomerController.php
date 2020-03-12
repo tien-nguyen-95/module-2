@@ -25,7 +25,7 @@ class CustomerController extends Controller
         $customer = new Customer;
         $customer->name = request('name');
         $customer->email = request('email');
-        $customer->dob = request('dob');
+        $customer->dob = date('Y-m-d',strtotime(request('dob')));
         $customer->save();
         return redirect()->route('customers.index')->with('success', "Tạo thành công");
     }
@@ -47,7 +47,7 @@ class CustomerController extends Controller
         $customer = Customer::findOrFail($id);
         $customer->name = request('name');
         $customer->email = request('email');
-        $customer->dob = request('dob');
+        $customer->dob = date('Y-m-d',strtotime(request('dob')));
         $customer->save();
         return redirect()->route('customers.index')->with('success', "Cập nhật thành công");
     }

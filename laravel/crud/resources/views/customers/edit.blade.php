@@ -20,7 +20,7 @@
                         <input type="email" class="form-control" name="email" value="{{ $customer->email }}" required></div>
                     <div class="form-group">
                         <label>Ngày sinh</label>
-                        <input type="text" class="form-control" name="dob" value="{{ $customer->dob }}" required>
+                        <input type="date" class="form-control" name="dob" value="{{ $customer->dob }}" required>
                     </div>
 
 

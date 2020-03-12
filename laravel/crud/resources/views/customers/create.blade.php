@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
             <label for="title">Ngày sinh</label>
-            <input type="text" class="form-control" name="dob" placeholder="Nhập ngày sinh...">
+            <input type="date" class="form-control" name="dob" placeholder="Nhập ngày sinh...">
         </div>
         <div class="form-group">
             <label for="title">Email</label>
