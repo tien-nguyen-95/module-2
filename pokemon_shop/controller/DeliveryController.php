@@ -6,7 +6,7 @@ use Model\DBConnection;
 
 class DeliveryController
 {
-    public $DeliveryDB;
+    public $deliveryDB;
 
     public function __construct()
     {

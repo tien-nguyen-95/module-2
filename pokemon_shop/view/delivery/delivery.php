@@ -6,9 +6,7 @@
   require "../../model/DBConnection.php";
   require "../../view/partials/head.php";
   use \Controller\DeliveryController;
-
-
-
+  
   $controlDelivery = new DeliveryController();
 
   $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : NULL;

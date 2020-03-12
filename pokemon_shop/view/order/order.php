@@ -7,8 +7,6 @@
   require "../../view/partials/head.php";
   use \Controller\OrderController;
 
-
-
   $controlOrder = new OrderController();
 
   $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : NULL;
