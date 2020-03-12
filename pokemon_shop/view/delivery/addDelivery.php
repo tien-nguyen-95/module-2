@@ -22,7 +22,7 @@
                     <input type="text" class="form-control" name="status" required>
                 </div>
                 <input type="submit" value="Confirm" class="btn btn-primary"/>
-                <a class="btn btn-secondary" href="order.php">Cancel</a>
+                <a class="btn btn-secondary" href="delivery.php">Cancel</a>
             </form>       
         </div>   
     </div> 

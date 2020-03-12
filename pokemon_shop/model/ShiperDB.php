@@ -57,7 +57,7 @@
             $statement->bindParam(3, $shiper->phone);
             $statement->bindParam(4, $shiper->email);
             $statement->bindParam(5, $shiper->timework);
-            $statement->bindParam(7, $id);
+            $statement->bindParam(6, $id);
             return $statement->execute();
         }
 

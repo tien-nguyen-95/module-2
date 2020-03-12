@@ -12,7 +12,7 @@
                 </div>
                 <div class="form-group">
                     <label>Birthday</label>
-                    <input type="text" class="form-control" name="birthday" required>
+                    <input type="date" class="form-control" name="birthday" required>
                 </div>
                 <div class="form-group">
                     <label>Phone</label>

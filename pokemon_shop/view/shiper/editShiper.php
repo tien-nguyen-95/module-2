@@ -4,11 +4,11 @@
     <input type="hidden" name="id" value="<?php echo $shiper->id_shiper; ?>"/>
     <div class="form-group">
             <label>Name</label>
-            <input type="text" class="form-control" name="shiperName" value="<?php echo $shiper->name; ?>"required>
+            <input type="text" class="form-control" name="name" value="<?php echo $shiper->name; ?>"required>
         </div>
         <div class="form-group">
             <label>Birthday</label>
-            <input type="text" class="form-control" name="birthday" value="<?php echo $shiper->birthday; ?>"required>
+            <input type="date" class="form-control" name="birthday" value="<?php echo $shiper->birthday; ?>"required>
         </div>
         <div class="form-group">
             <label>Phone</label>

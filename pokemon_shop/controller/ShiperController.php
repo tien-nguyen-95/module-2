@@ -21,7 +21,7 @@ class ShiperController
             include 'addShiper.php';
         } else {
             $name = $_POST['name'];
-            $birthday = $_POST['birthday'];
+            $birthday = date('Y-m-d',strtotime($_POST['birthday']));
             $phone = $_POST['phone'];
             $email = $_POST['email'];
             $timework = $_POST['timework'];
@@ -40,10 +40,18 @@ class ShiperController
             include 'editShiper.php';
         } else {
             $id = $_POST['id'];
-            $shiper = new Shiper($_POST['id_shiper'], $_POST['name'], $_POST['birthday'],$_POST['phone'], $_POST['email'], $_POST['timework']);
+            $name = $_POST['name'];
+            $birthday = date('Y-m-d',strtotime($_POST['birthday']));
+            $phone = $_POST['phone'];
+            $email = $_POST['email'];
+            $timework = $_POST['timework'];
+  
+            $shiper = new Shiper($name , $birthday , $phone , $email , $timework);
             $this->shiperDB->update($id, $shiper);
             header('Location: shiper.php');
         }
+
+        
     }
 
     public function delete()
