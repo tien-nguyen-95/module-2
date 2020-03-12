@@ -24,13 +24,13 @@
 
         public function getAll()
         {
-            $sql = "SELECT * FROM deliverys";
+            $sql = "SELECT * FROM delivery";
             $statement = $this->connection->prepare($sql);
             $statement->execute();
             $result = $statement->fetchAll();
             $deliverys = [];
             foreach ($result as $row) {
-                $delivery = new delivery($row['orderNumber'], $row['id_shiper'], $row['requiredDate'],$row['status']);
+                $delivery = new Delivery($row['id_shiper'],$row['orderNumber'] , $row['requiredDate'],$row['status']);
                 $delivery->id_delivery = $row['id_delivery'];
                 $deliverys[] = $delivery;
             }
@@ -38,18 +38,18 @@
         }
 
         public function get($id){
-            $sql = "SELECT * FROM deliverys WHERE deliverys.id_delivery = ?";
+            $sql = "SELECT * FROM delivery WHERE delivery.id_delivery = ?";
             $statement = $this->connection->prepare($sql);
             $statement->bindParam(1, $id);
             $statement->execute();
             $row = $statement->fetch();
-            $delivery = new delivery($row['orderNumber'], $row['id_shiper'], $row['requiredDate'],$row['status']);
+            $delivery = new Delivery($row['id_shiper'],$row['orderNumber'] , $row['requiredDate'],$row['status']);
             $delivery->id_delivery = $row['id_delivery'];
             return $delivery;
         }
         
         public function update($id, $delivery){
-            $sql = "UPDATE deliverys SET orderNumber = ?, id_shiper = ?, requiredDate = ?, status = ? WHERE id_delivery = ?";
+            $sql = "UPDATE delivery SET orderNumber = ?, id_shiper = ?, requiredDate = ?, status = ? WHERE id_delivery = ?";
             $statement = $this->connection->prepare($sql);
             $statement->bindParam(1, $delivery->orderNumber);
             $statement->bindParam(2, $delivery->id_shiper);
@@ -60,9 +60,9 @@
         }
 
         public function delete($id){
-        $sql = "DELETE FROM deliverys WHERE deliverys.id_delivery = ?";
-        $statement = $this->connection->prepare($sql);
-        $statement->bindParam(1, $id);
-        return $statement->execute();
+            $sql = "DELETE FROM delivery WHERE delivery.id_delivery = ?";
+            $statement = $this->connection->prepare($sql);
+            $statement->bindParam(1, $id);
+            return $statement->execute();
         }
     }

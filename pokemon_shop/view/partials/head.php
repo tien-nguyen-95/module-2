@@ -16,7 +16,7 @@
     <a class="navbar-brand" href="/view/shiper/shiper.php">Shiper management</a>
     <a class="navbar-brand" href="/view/customer/customer.php">Customer management</a>
     <a class="navbar-brand" href="/view/order/order.php">Order management</a>
-    <a class="navbar-brand" href="/view/delivery/listDelivery.php">Delivery </a>
+    <a class="navbar-brand" href="/view/delivery/delivery.php">Delivery </a>
     <a class="navbar-brand" href="/view/payment/payment.php">Payment </a>
     <a class="navbar-brand" href="../../login/logout.php">Log Out</a>
   </header>

@@ -17,10 +17,10 @@ class OrderController
 
     public function add()
     {
-       if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-          include 'addOrder.php';
-      } else {
-  
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        include 'addOrder.php';
+        } else {
+
         $id_customer = $_POST['id_customer'];
         $productCode = $_POST['productCode'];
         $orderDate = date('Y-m-d',strtotime($_POST['orderDate']));

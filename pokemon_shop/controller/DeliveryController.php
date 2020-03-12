@@ -1,6 +1,5 @@
 <?php
 namespace Controller;
-use function Couchbase\defaultDecoder;
 use Model\Delivery;
 use Model\DeliveryDB;
 use Model\DBConnection;
@@ -18,19 +17,17 @@ class DeliveryController
     public function add()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            include 'addDelivery.php';
+        include 'addDelivery.php';
         } else {
-            
-            
-            $orderName = $_POST['DeliveryName'];
-            $width = $_POST['width'];
-            $height = $_POST['height'];
-            $material = $_POST['material'];
-            $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-            $price = $_POST['price'];
-            $Delivery = new Delivery($DeliveryName,$width,$height,$material,$image,$price);
-            $this->DeliveryDB->create($Delivery);
-            header('Location: Delivery.php');
+
+        $id_shiper = $_POST['id_shiper'];
+        $orderNumber = $_POST['orderNumber'];
+        $requiredDate = date('Y-m-d',strtotime($_POST['requiredDate']));
+        $status = $_POST['status'];
+    
+        $delivery = new Delivery($id_shiper , $orderNumber , $requiredDate , $status);
+        $this->deliveryDB->create($delivery);
+        header('Location: delivery.php');
         }
     }
 
@@ -38,13 +35,18 @@ class DeliveryController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = $_GET['id'];
-            $Delivery = $this->DeliveryDB->get($id);
+            $delivery = $this->deliveryDB->get($id);
             include 'editDelivery.php';
         } else {
-            $id = $_POST['id'];
-            $Delivery = new Delivery($_POST['DeliveryName'], $_POST['width'], $_POST['height'],$_POST['material'], addslashes(file_get_contents($_FILES['image']['tmp_name'])), $_POST['price']);
-            $this->DeliveryDB->update($id, $Delivery);
-            header('Location: Delivery.php');
+            $id = $_GET['id'];
+            $id_shiper = $_POST['id_shiper'];
+            $orderNumber = $_POST['orderNumber'];
+            $requiredDate = date('Y-m-d',strtotime($_POST['requiredDate']));
+            $status = $_POST['status'];
+        
+            $delivery = new Delivery($id_shiper , $orderNumber , $requiredDate , $status);
+            $this->deliveryDB->update($id , $delivery);
+            header('Location: delivery.php');
         }
     }
 
@@ -52,18 +54,18 @@ class DeliveryController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = $_GET['id'];
-            $Delivery = $this->DeliveryDB->get($id);
+            $delivery = $this->deliveryDB->get($id);
             include 'deleteDelivery.php';
         } else {
             $id = $_POST['id'];
-            $this->DeliveryDB->delete($id);
-            header('Location: Delivery.php');
+            $this->deliveryDB->delete($id);
+            header('Location: delivery.php');
         }
     }
 
     public function index(){
-        $Deliverys = $this->DeliveryDB->getAll();
+        $deliverys = $this->deliveryDB->getAll();
         include 'listDelivery.php';
-      }
+    }
 }
 ?>

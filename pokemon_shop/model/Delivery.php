@@ -9,7 +9,7 @@
         public $status;
         
 
-        public function __construct($orderNumber ,$id_shiper , $requiredDate , $status )
+        public function __construct($id_shiper ,$orderNumber , $requiredDate , $status )
         {
             $this->orderNumber  = $orderNumber ;       
             $this->id_shiper = $id_shiper;
