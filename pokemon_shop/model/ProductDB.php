@@ -21,7 +21,7 @@
             $statement->bindParam(4, $product->material);
             $statement->bindParam(5, $product->image);
             $statement->bindParam(6, $product->price);
-            $statement->bindParam(6, $product->origin);
+            $statement->bindParam(7, $product->origin);
             return $statement->execute();
         }
 
