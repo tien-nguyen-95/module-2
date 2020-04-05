@@ -1,0 +1,5 @@
+@include('partials.header')
+@include('partials.nav')
+@include('partials.messeger')
+@yield('content')
+@include('partials.footer')
