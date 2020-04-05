@@ -17,7 +17,7 @@ class CreatTaskTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('content');
-            $table->date('due_date');
+            $table->date('due_date')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

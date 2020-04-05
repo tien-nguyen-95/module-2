@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Task;
 
 class TaskSeed extends Seeder
 {
@@ -14,8 +15,6 @@ class TaskSeed extends Seeder
         $task1 = new Task();
         $task1->title = 'tạo 1 task';
         $task1->content = 'tạo 1 task bất kì để thử';
-        $task1->duedate = '';
-        $task1->image ='';
         $task1->save();
     }
 }
