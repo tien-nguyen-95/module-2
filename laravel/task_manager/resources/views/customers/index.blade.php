@@ -1,6 +1,6 @@
 @extends('customers.layout')
 
-@section('title', 'Tạo mới')
+@section('title', 'Trang chủ')
 
 @section('content')
 <div class="container">

@@ -1,6 +1,6 @@
 @extends('customers.layout')
 
-@section('title', 'Sửa')
+@section('title', 'Tạo mới')
 
 @section('content')
 
